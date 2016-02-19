@@ -1,6 +1,7 @@
 paper.install(window);
 
 var mousePos, position, mousePercentageFromCenter;
+var symbolCircle, symbolCactus, symbolWave, symbolStar;
 var items = 2;
 var count = 20;
 var accordion = document.getElementById('middle-words');
@@ -58,22 +59,23 @@ var buildStars = function() {
   var circle = new Path.Circle({
     center: [0, 0],
     radius: 8,
-    fillColor: 'white',
+    fillColor: '#fcffec',
   });
-  var symbolCircle = new Symbol(circle);
+  symbolCircle = new Symbol(circle);
   
   //var cactus = project.importSVG('http://ochapos.space.s3.amazonaws.com/images/cactus.svg');
   var cactus = project.importSVG(document.getElementById('cactus_svg'));
   cactus.fillColor = '#20ceac';
-  var symbolCactus = new Symbol(cactus);
+  symbolCactus = new Symbol(cactus);
   
   var wave = project.importSVG(document.getElementById('wave_svg'));
   wave.fillColor = '#1eabf1';
-  var symbolWave = new Symbol(wave);
+  symbolWave = new Symbol(wave);
   
+
   var star = project.importSVG(document.getElementById('star_svg'));
   star.fillColor = '#e2c51b';
-  var symbolStar = new Symbol(star);
+  symbolStar = new Symbol(star);
 
   var symbolNames = [symbolCactus, symbolCircle, symbolStar, symbolWave];
   

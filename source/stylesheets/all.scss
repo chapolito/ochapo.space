@@ -9,6 +9,8 @@
 
 // Colors
 $cream: #fcffec;
+$deepSpace1: #152c3f;
+$deepSpace2: #181c23;
 
 html, body {
   padding: 0;
@@ -24,7 +26,7 @@ canvas[resize] {
 }
 
 body {
-  @include background-image(linear-gradient(#181c23, #152c3f));
+  @include background-image(linear-gradient($deepSpace2, $deepSpace1));
   text-align: center;
   font-family: "proxima-nova-extra-condensed", sans-serif;
 }
@@ -65,10 +67,11 @@ body {
   text-transform: uppercase;
   margin: 0; 
   line-height: 100px;
+  @include text-shadow(0px 2px 20px rgba($deepSpace2, 0.5));
 
   span {
-    @include opacity(0.8);
-    color: #36424f;
+    @include opacity(0.7);
+    color: lighten($deepSpace1, 10%);
   }
 }
 
