@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 // Vendor
+@import 'normalize';
 @import 'compass';
 @import 'compass/css3/opacity';
 
@@ -12,24 +13,12 @@ $cream: #fcffec;
 $deepSpace1: #152c3f;
 $deepSpace2: #181c23;
 
-html, body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+// Global Site
+@import 'base';
 
-canvas[resize] {
-  width: 100%;
-  height: 100%;
-}
+// View Specific
+@import 'home'
 
-body {
-  @include background-image(linear-gradient($deepSpace2, $deepSpace1));
-  text-align: center;
-  font-family: "proxima-nova-extra-condensed", sans-serif;
-}
 
 @include keyframes (bob-down) {
   from {
@@ -39,6 +28,7 @@ body {
     @include transform(translateY(-20px));
   }
 }
+
 
 .accordion-wrapper {
   position: absolute;
