@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-  @include background-image(linear-gradient($deepSpace2, $deepSpace1));
+  background-image: linear-gradient($deepSpace2, $deepSpace1);
   text-align: center;
   font-family: "proxima-nova-extra-condensed", sans-serif;
 }
@@ -22,8 +22,6 @@ $h4: 21.41px; // 18px * 2^(1/4)
 $h5: 18px;    // 18px * 2^(0/4)
 $h6: 15.14px; // 18px * 2^(-1/4)
 $xs: 12.73px; // 18px * 2^(-2/4)
-
-
 
 canvas[resize] {
   width: 100%;
