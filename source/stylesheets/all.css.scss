@@ -7,6 +7,7 @@
 
 // Mixins
 @import 'flexbox';
+@import 'mixins';
 
 // Global Site
 @import 'colors';
@@ -14,3 +15,4 @@
 
 // View Specific
 @import 'home';
+@import 'views/our-story';
