@@ -1,5 +1,9 @@
+
 $baseline: 26px;
 $baseFontSize: 16px;
+
+$body-font-stack: 'clavo', 'rooney-web', 'alegreya', sans-serif;
+$header-font-stack: 'neuzeit-grotesk-extra-conden', 'gnuolane', 'proxima-nova-extra-condensed', sans-serif;
 
 @function rem($px, $base: $baseFontSize) {
   @return ($px / $base) * 1rem;

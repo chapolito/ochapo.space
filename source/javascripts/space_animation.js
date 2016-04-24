@@ -1,22 +1,23 @@
 paper.install(window);
 
 var mousePos, position, mousePercentageFromCenter;
-var symbolCircle, symbolCactus, symbolWave, symbolStar;
-var items = 2;
-var count = 20;
+var symbolCircle1, symbolCircle2, symbolCactus, symbolWave, symbolStar;
+var symbolCount = 5;
+var instancesPerSymbolCount = 15;
 var accordion = document.getElementById('middle-words');
 
 window.onload = function() {
   paper.setup('ochapos-space');
-  mousePos = paper.view.center.add([view.bounds.width / 3, 100]);
+  //mousePos = paper.view.center.add([view.bounds.width / 3, 100]);
   position = paper.view.center;
   createScene();
-  mousePercentageFromCenter = mousePos.y / paper.view.bounds.height
+  //mousePercentageFromCenter = mousePos.y / paper.view.bounds.height
   paper.view.draw();
 
   paper.view.onFrame = function(event) {
-    position = position.add( (mousePos.subtract(position).divide(10) ) );
-    var vector = (view.center.subtract(position)).divide(10);
+    //position = position.add( (mousePos.subtract(position).divide(10) ) );
+    position = [3, 3];
+    var vector = (view.center.subtract(position)).divide(100);
     moveStars(vector.multiply(3));
     // var distanceFromCenter = mousePos.x - view.center.x;
     // accordionText(distanceFromCenter);
@@ -49,19 +50,26 @@ var createScene = function() {
 // ---------------------------------------------------
 //  Stars (from paperjs.org examples section)
 // ---------------------------------------------------
-window.onmousemove = function(event) {
-  mousePos.x = event.x;
-  mousePos.y = event.y;
-};
+// window.onmousemove = function(event) {
+//   mousePos.x = event.x;
+//   mousePos.y = event.y;
+// };
 
 var buildStars = function() {
 
-  var circle = new Path.Circle({
+  var circle1 = new Path.Circle({
     center: [0, 0],
     radius: 8,
     fillColor: '#fcffec',
   });
-  symbolCircle = new Symbol(circle);
+  symbolCircle1 = new Symbol(circle1);
+
+  var circle2 = new Path.Circle({
+    center: [0, 0],
+    radius: 8,
+    fillColor: '#ec612e',
+  });
+  symbolCircle2 = new Symbol(circle2);
   
   //var cactus = project.importSVG('http://ochapos.space.s3.amazonaws.com/images/cactus.svg');
   var cactus = project.importSVG(document.getElementById('cactus_svg'));
@@ -71,30 +79,29 @@ var buildStars = function() {
   var wave = project.importSVG(document.getElementById('wave_svg'));
   wave.fillColor = '#1eabf1';
   symbolWave = new Symbol(wave);
-  
 
   var star = project.importSVG(document.getElementById('star_svg'));
   star.fillColor = '#e2c51b';
   symbolStar = new Symbol(star);
 
-  var symbolNames = [symbolCactus, symbolCircle, symbolStar, symbolWave];
+  var symbolNames = [symbolCactus, symbolCircle1, symbolCircle2, symbolStar, symbolWave];
   
   // Place the instances of the symbol:
   // Iterate for different symbols
   for (var a = 0; a < symbolNames.length; a++) {
     // Iterate for each placement of that symbol
-    for (var i = 0; i < count; i++) {
+    for (var i = 0; i < instancesPerSymbolCount; i++) {
       // The center position is a random point in the view:
       var center = Point.random().multiply(paper.view.size);
       // Place symbol and scale
       var placed = symbolNames[a].place(center);
-      placed.scale(i / count + 0.01);
+      placed.scale(i / instancesPerSymbolCount + 0.01);
       // Opacity clunks in Safari :(
-      //placed.opacity = i / count + 0.1
+      // placed.opacity = i / instancesPerSymbolCount + 0.1
       placed.data = {
         vector: new Point({
           angle: Math.random() * 360,
-          length : (i / count) * Math.random() / 5
+          length : (i / instancesPerSymbolCount) * Math.random() / 5
         })
       };
     }
@@ -133,7 +140,7 @@ var moveStars = function(vector) {
   // Run through the active layer's children list and change
   // the position of the placed symbols:
   var layer = project.activeLayer;
-  for (var i = 1; i < count * 4 + 1; i++) {
+  for (var i = 1; i < symbolCount * instancesPerSymbolCount + 1; i++) {
     var item = layer.children[i];
     var scale = item.scaling;
     var length = vector.length / 15 * scale.x;
