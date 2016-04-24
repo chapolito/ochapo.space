@@ -1,5 +1,6 @@
 
 
+
 html, body {
   padding: 0;
   margin: 0;
@@ -14,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  font-family: 'clavo', 'rooney-web', 'alegreya', sans-serif;
+  font-family: $body-font-stack;
   color: $cream;
 }
 
@@ -31,13 +32,17 @@ $xs: 12.58px; // 16px * 1.618^(-2/2)
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'gnuolane', 'proxima-nova-extra-condensed', sans-serif;
+  font-family: $header-font-stack;
+  line-height: rem($baseline);
+  margin: 0;
 }
 
 h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-right: -0.2em;
+  line-height: rem($baseline * 2);
+  margin-bottom: rem($baseline);
 }
 
 h1 {
@@ -64,11 +69,21 @@ h6 {
   font-size: rem($h6);
 }
 
-p.intro:first-letter {
-  color: $cactusMint;
-  font-size: rem($h3);
-  float: left; 
-  font-size: rem($baseline * 2);
-  line-height: rem($baseline * 3 - 8px);
+p {
+  font-size: rem($body);
+  line-height: rem($baseline);
+  margin: 0 0 rem($baseline) 0;
+  
+  &.intro:first-letter {
+    color: $cactusMint;
+    font-family: $header-font-stack;
+    float: left; 
+    font-size: rem($baseline * 3);
+    line-height: rem($baseline * 3 - 8px);
+    margin-right: 0.25em;
+  }
 }
 
+.text-center {
+  text-align: center;
+}
