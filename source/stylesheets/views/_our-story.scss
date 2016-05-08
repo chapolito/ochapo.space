@@ -164,12 +164,19 @@ canvas[resize] {
   z-index: 2;
   position: absolute;
   top: 0;
-  left: 50%;
-  margin: 200px 0 0 -396px;
+  left: 2%;
+  margin: 200px 0 0 0;
+  width: 96%;
 
   @media screen and ( min-height: 580px ){
     top: 60vh;
     margin-top: -170px;
+  }
+
+  @media screen and ( min-width: 792px ){
+    width: 792px;
+    left: 50%;
+    margin-left: -396px;
   }
 }
 
