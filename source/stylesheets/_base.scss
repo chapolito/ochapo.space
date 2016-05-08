@@ -73,13 +73,14 @@ p {
   font-size: rem($body);
   line-height: rem($baseline);
   margin: 0 0 rem($baseline) 0;
-  
+
   &.intro:first-letter {
     color: $cactusMint;
     font-family: $header-font-stack;
+    text-shadow: 0px 3px 0px rgba($deepSpace2, 1);
     float: left; 
     font-size: rem($baseline * 3);
-    line-height: rem($baseline * 3 - 8px);
+    line-height: rem($baseline * 3);
     margin-right: 0.25em;
   }
 }

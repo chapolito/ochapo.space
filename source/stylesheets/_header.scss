@@ -1,0 +1,54 @@
+
+
+nav.top-nav {
+
+  ul {
+    position: absolute;
+    top: 73px;
+    left: 4vw;
+    z-index: 99;
+    padding: 0;
+
+    li {
+      text-align: center;
+      display: inline-block;
+      list-style: none;
+      padding: 0;
+
+      &.nav-info-to-be-known {
+        width: 32vw;
+      }
+
+      &.nav-our-story {
+        //width: 26vw;
+        width: 92vw;
+      }
+
+      &.nav-rsvp {
+        width: 20vw;
+      }
+
+      &.nav-registry {
+        width: 14vw;
+      }
+
+      a {
+        text-decoration: none;
+        color: $cream;
+        text-transform: uppercase;
+        font-family: $header-font-stack;
+      }
+
+      &.active a {
+        color: $deepSpace1;
+      }
+    }
+  }
+  img {
+    height: 200px;
+    z-index: 10;
+    position: relative;
+    display: block;
+    margin: 0 auto;  
+  }
+}
