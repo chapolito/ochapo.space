@@ -1,0 +1,27 @@
+.info-to-be-known-content {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  background: linear-gradient(180deg, rgba($deepSpace1, 0), rgba($deepSpace1, 0.8) 20vh);
+  padding-top: rem($baseline * 10);
+  padding-bottom: rem($baseline * 4);
+
+  h1 {
+    margin-bottom: rem($baseline);
+  }
+
+  section {
+    text-align: left;
+  }
+
+  h3 {
+    background-image: url('/images/wavy-hr.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 277px 9px;
+    padding-top: 16px;
+    margin-top: rem($baseline * 2);
+    color: $sunsetYellow;
+  }
+}

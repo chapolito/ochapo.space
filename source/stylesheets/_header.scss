@@ -2,9 +2,13 @@
 
 nav.top-nav {
 
+  h6 {
+    padding: 2px 0;
+  }
+
   ul {
     position: absolute;
-    top: 73px;
+    top: 66px;
     left: 4vw;
     z-index: 99;
     padding: 0;
@@ -16,16 +20,19 @@ nav.top-nav {
       padding: 0;
 
       &.nav-info-to-be-known {
-        width: 32vw;
+        width: 18vw;
+        margin-right: 6vw;
+        margin-left: 14vw;
       }
 
       &.nav-our-story {
-        //width: 26vw;
-        width: 92vw;
+        width: 16vw;
+        margin-right: 3vw;
       }
 
       &.nav-rsvp {
-        width: 20vw;
+        width: 14vw;
+        margin-right: 4vw;
       }
 
       &.nav-registry {
@@ -39,16 +46,55 @@ nav.top-nav {
         font-family: $header-font-stack;
       }
 
-      &.active a {
-        color: $deepSpace1;
+      &.active {
+        background-color: $cream2;
+        border-radius: 6px;
+        padding: 4px 0;
+        position: relative;
+
+        h6 {
+          margin-left: -6px;
+          width: calc(100% + 12px);
+          background-color: $cream;
+          border-radius: 6px;
+        }
+
+        a {
+          color: $deepSpace1;
+        }
+
+        &:before {
+          width: 200px;
+          height: 200px;
+          display: block;
+          position: absolute;
+          content: ' ';
+          background-image: url('/images/nav-select.svg');
+          background-repeat: no-repeat;
+          background-position: center top;
+          background-size: 200px 200px;
+          top: -84px;
+          left: 50%;
+          z-index: -1;
+          margin-left: -100px;
+        }
       }
     }
   }
+  
   img {
     height: 200px;
     z-index: 10;
     position: relative;
     display: block;
-    margin: 0 auto;  
+    margin: 0 auto;
+
+    // height: 20vw;
+    // z-index: 10;
+    // position: absolute;
+    // display: block;
+    // margin-top: -10vw;
+    // top: 99px;
+    // left: 40vw
   }
 }

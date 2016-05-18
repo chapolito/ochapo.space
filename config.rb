@@ -34,10 +34,16 @@ end
 #   end
 # end
 
+helpers do
+  def is_page_active(page)
+    current_page.url == page ? {:class => 'active'} : {}
+  end
+end
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  #activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   activate :minify_javascript
