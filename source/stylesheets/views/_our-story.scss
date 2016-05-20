@@ -118,7 +118,8 @@ canvas[resize] {
   }
 }
 
-.accordion-text {
+.oconnor-ochapo-text {
+  font-size: 13vw;
   color: #FDFFED;
   width: 100%;
   text-align: center;
@@ -126,12 +127,12 @@ canvas[resize] {
   left: -50%;
   color: $cream;
   font-weight: bold;
-  letter-spacing: -1px;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  margin: 300px 0 0 50%; 
+  margin: -5vw 0 0 50%; 
   @include text-shadow(0px 2px 20px rgba($deepSpace2, 0.5));
   z-index: 99;
-  top: 0;
+  top: 320px;
 
   span {
     @include opacity(0.7);
@@ -139,8 +140,7 @@ canvas[resize] {
   }
 
   @media screen and ( min-height: 580px ) {
-    top: 50vh;
-    margin-top: 0;
+    top: 53vh;
   }
 }
 
@@ -149,18 +149,18 @@ canvas[resize] {
   @include animation(2s ease-in-out infinite alternate bob-down);
   z-index: 2;
   position: absolute;
-  top: 0;
+  top: 320px;
   left: 2%;
-  margin: 200px 0 0 0;
+  margin: -21.65vw 0 0 0;
   width: 96%;
 
   @media screen and ( min-height: 580px ){
-    top: 60vh;
-    margin-top: -170px;
+    top: 55vh;
   }
 
   @media screen and ( min-width: 792px ){
     width: 792px;
+    margin-top: -170px;
     left: 50%;
     margin-left: -396px;
   }
@@ -169,13 +169,20 @@ canvas[resize] {
 
 @include at-least($tablet) {
 
-  .accordion-text {
-    font-size: 140px;
+  .oconnor-ochapo-text {
     line-height: 100px;
   }
   
   .our-story .timeline-line {
     display: block;
+  }
+
+  .cosmic-beer, .cosmic-proposal {
+    transform: translateX(-5.8vw);
+  }
+
+  .cosmic-surfing {
+    transform: translateX(5.8vw);
   }
 }
 

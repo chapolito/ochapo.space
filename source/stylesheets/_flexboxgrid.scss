@@ -5,7 +5,7 @@ $offset-modifier: 'offset' !default;
 $gutter-width: percentage(1/26) !default;
 $outer-margin: percentage(1/26) !default;
 $gutter-compensation: (($gutter-width / 2) * -1) !default;
-$half-gutter-width: ($gutter-width / 2) !default;
+//$half-gutter-width: ($gutter-width / 2) !default;
 
 $width-xs: 30 !default;
 $width-sm: 48 !default;
@@ -150,8 +150,8 @@ $offset-properties: 'margin-left' !default;
   box-sizing: border-box;
   flex-grow: 0;
   flex-shrink: 0;
-  padding-right: $half-gutter-width;
-  padding-left: $half-gutter-width;
+  padding-right: $gutter-width;
+  padding-left: $gutter-width;
 }
 
 .container-fluid {

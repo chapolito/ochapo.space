@@ -47,6 +47,7 @@ h1, h2, h3 {
 
 h1 {
   font-size: rem($h1);
+  display: inline-block;
 }
 
 h2 {
@@ -89,3 +90,30 @@ p {
   text-align: center;
 }
 
+a {
+  color: $pacificAzure;
+
+  &:hover {
+    color: lighten($pacificAzure, 10%);
+  }
+}
+
+::selection {
+  background: $sunburnOchre;
+}
+
+::-moz-selection {
+  background: $sunburnOchre;
+}
+
+a::selection {
+  background: $sunburnOchre;
+  text-shadow: none;
+  color: $cream;
+}
+
+a::-moz-selection {
+  background: $sunburnOchre;
+  text-shadow: none;
+  color: $cream;
+}

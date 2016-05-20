@@ -7,6 +7,23 @@
   padding-top: rem($baseline * 10);
   padding-bottom: rem($baseline * 4);
 
+  .full-width-image {
+    display: block;
+  }
+
+  .gutter-image {
+    float: right;
+    margin: 0 0 5% 5%;
+  }
+
+  li {
+    margin-bottom: rem($baseline * 0.5);
+  }
+
+  ul {
+    margin-bottom: rem($baseline * 1.5);
+  }
+
   h1 {
     margin-bottom: rem($baseline);
   }
@@ -18,9 +35,9 @@
   h3 {
     background-image: url('/images/wavy-hr.svg');
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: left bottom;
     background-size: 277px 9px;
-    padding-top: 16px;
+    padding-bottom: $baseline;
     margin-top: rem($baseline * 2);
     color: $sunsetYellow;
   }
