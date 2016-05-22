@@ -2,9 +2,9 @@ $column-count: 12 !default;
 $column-selector: '.col' !default;
 $offset-modifier: 'offset' !default;
 
-$gutter-width: percentage(1/26) !default;
-$outer-margin: percentage(1/26) !default;
-$gutter-compensation: (($gutter-width / 2) * -1) !default;
+$gutter-width: 3.84615% !default;
+$outer-margin: 3.84615% !default;
+//$gutter-compensation: (($gutter-width / 2) * -1) !default;
 //$half-gutter-width: ($gutter-width / 2) !default;
 
 $width-xs: 30 !default;
@@ -99,7 +99,7 @@ $offset-properties: 'margin-left' !default;
 
 @mixin offsets($selector: $column-selector, $modifier-selector: $offset-modifier, $properties: $offset-properties, $columns: $column-count, $queries: $queries) {
   @each $name, $size in $queries {
-    @for $i from 1 through $columns {
+    @for $i from 0 through $columns {
       #{$selector + $block-delimiter + $name + $modifier-delimiter + $modifier-selector + $modifier-delimiter + $i} {
         @content;
       }
@@ -107,11 +107,11 @@ $offset-properties: 'margin-left' !default;
   }
 
   @each $name, $size in $queries {
-    @for $i from 1 through $columns {
+    @for $i from 0 through $columns {
       #{$selector + $block-delimiter + $name + $modifier-delimiter + $modifier-selector + $modifier-delimiter + $i} {
         @include queries($name, $queries) {
           @each $prop in $properties {
-            @include percentOffset($prop, $columns, $i);
+            @include percentOffset($prop, $columns + 1, $i);
           }
         }
       }
@@ -144,6 +144,8 @@ $offset-properties: 'margin-left' !default;
   flex-wrap: wrap;
   //margin-right: $gutter-compensation;
   //margin-left: $gutter-compensation;
+  padding-right: $outer-margin;
+  padding-left: $outer-margin;
 }
 
 @mixin column() {

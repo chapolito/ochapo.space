@@ -18,8 +18,8 @@
 
   .directions {
     list-style: none;
-    margin: 0 0 rem($baseline * 1.5) 2vw;
-    padding: 0 8vw 0 0;
+    margin: rem($baseline) 0 rem($baseline * 1.5) 0;
+    padding: 0;
     color: rgba($cream2, 0.9);
 
     li {
@@ -29,7 +29,7 @@
     }
 
     img {
-      width: rem($baseline * 3);
+      width: rem($baseline * 2);
       float: left;
       padding-right: 2vw;
       padding-bottom: rem($baseline);
