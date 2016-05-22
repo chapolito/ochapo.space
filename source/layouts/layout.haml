@@ -8,8 +8,9 @@
 
     = stylesheet_link_tag "all" 
     //= stylesheet_link_tag 'http://basehold.it/26'
-    = javascript_include_tag "https://use.typekit.net/bwv5kfk.js"
-    = javascript_include_tag "https://use.typekit.net/lue0fxo.js"
+    //= javascript_include_tag "https://use.typekit.net/bwv5kfk.js"
+    //= javascript_include_tag "https://use.typekit.net/lue0fxo.js"
+    = javascript_include_tag "https://use.typekit.net/cvv3ucu.js"
     :javascript 
       try{Typekit.load({ async: true });}catch(e){}
     = javascript_include_tag  "https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"
@@ -17,16 +18,18 @@
 
   %body( class='#{page_classes}' )
     %header
+      .ochapo-wedding-type
+        %img( src='/images/ochapo-wedding-type.svg' )
       %nav.top-nav
         %ul
           %li.nav-info-to-be-known{ is_page_active('/info-to-be-known/') }
-            %h6=link_to 'Info to be Known', '/info-to-be-known'
+            =link_to 'Info to be Known', '/info-to-be-known'
           %li.nav-our-story{ is_page_active('/') }
-            %h6=link_to 'Our Story', '/'
+            =link_to 'Our Story', '/'
           %li.nav-rsvp{ is_page_active('/rsvp/') }
-            %h6=link_to 'RSVP', '/rsvp/'
-          %li.nav-registry{ is_page_active('/registry/') }
-            %h6=link_to 'Registry', '/registry'
+            =link_to 'RSVP', '/rsvp/'
+          //%li.nav-registry{ is_page_active('/registry/') }
+          //  =link_to 'Registry', '/registry'
         //=image_tag "nav-select.svg"
 
     .star-field

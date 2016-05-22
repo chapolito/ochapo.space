@@ -1,4 +1,19 @@
 
+.ochapo-wedding-type {
+  position: absolute;
+  width: 100vw;
+  height: rem($baseline * 8);
+  overflow: hidden;
+  top: 0;
+  
+  img {
+    position: absolute;
+    width: 104vw;
+    top: -2vw;
+    left: -2vw;
+    margin-right: -2vw;
+  }
+}
 
 nav.top-nav {
 
@@ -28,7 +43,7 @@ nav.top-nav {
 
       &.nav-our-story {
         width: 16vw;
-        margin-right: 3vw;
+        margin-right: 5vw;
       }
 
       &.nav-rsvp {
@@ -41,10 +56,17 @@ nav.top-nav {
       }
 
       a {
+        @include transition(color 150ms ease-out);
         text-decoration: none;
         color: $cream;
         text-transform: uppercase;
         font-family: $header-font-stack;
+        font-weight: 900;
+        line-height: rem($baseline);
+
+        &:hover {
+          color: $sunburnOchre;
+        }
       }
 
       &.active {
@@ -53,15 +75,17 @@ nav.top-nav {
         padding: 4px 0;
         position: relative;
 
-        h6 {
+        a {
           margin-left: -6px;
           width: calc(100% + 12px);
           background-color: $cream;
           border-radius: 6px;
-        }
-
-        a {
+          display: block;
           color: $deepSpace1;
+
+          &:hover {
+            color: $sunburnOchre;
+          }
         }
 
         &:before {
@@ -89,13 +113,8 @@ nav.top-nav {
     position: relative;
     display: block;
     margin: 0 auto;
-
-    // height: 20vw;
-    // z-index: 10;
-    // position: absolute;
-    // display: block;
-    // margin-top: -10vw;
-    // top: 99px;
-    // left: 40vw
   }
 }
+
+
+

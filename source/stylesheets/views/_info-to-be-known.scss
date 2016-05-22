@@ -16,12 +16,33 @@
     margin: 0 0 5% 5%;
   }
 
+  .directions {
+    list-style: none;
+    margin: 0 0 rem($baseline * 1.5) 2vw;
+    padding: 0 8vw 0 0;
+    color: rgba($cream2, 0.9);
+
+    li {
+      clear: left;
+      min-height: rem($baseline * 3);
+      margin-bottom: rem($baseline);
+    }
+
+    img {
+      width: rem($baseline * 3);
+      float: left;
+      padding-right: 2vw;
+      padding-bottom: rem($baseline);
+    }
+  }
+
   li {
     margin-bottom: rem($baseline * 0.5);
   }
 
   ul {
     margin-bottom: rem($baseline * 1.5);
+    color: rgba($cream2, 0.9);
   }
 
   h1 {

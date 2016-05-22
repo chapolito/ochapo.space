@@ -16,24 +16,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-family: $body-font-stack;
+  font-weight: 400;
   color: $cream;
 }
 
 // Type Scale
 // Scale is 1:1.618 with an interval of 2
-$h1: 67.77px;    // 16px * 1.618^(4/2)
+$h1: 67.77px; // 16px * 1.618^(4/2)
 $h2: 53.28px; // 16px * 1.618^(3/2)
 $h3: 41.89px; // 16px * 1.618^(2/2)
 $h4: 32.93px; // 16px * 1.618^(1/2)
-$h5: 25.89px;    // 16px * 1.618^(0/2)
+$h5: 25.89px; // 16px * 1.618^(0/2)
 $h6: 20.35px; // 16px * 1.618^(-1/2)
-$body: 16px; // 16px * 1.618^(-2/2)
+$body: 16px;  // 16px * 1.618^(-2/2)
 $xs: 12.58px; // 16px * 1.618^(-2/2)
 
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-stack;
   line-height: rem($baseline);
+  font-weight: 900;
   margin: 0;
 }
 
@@ -74,6 +76,7 @@ p {
   font-size: rem($body);
   line-height: rem($baseline);
   margin: 0 0 rem($baseline) 0;
+  color: rgba($cream2, 0.9);
 
   &.intro:first-letter {
     color: $cactusMint;
@@ -117,3 +120,4 @@ a::-moz-selection {
   text-shadow: none;
   color: $cream;
 }
+
