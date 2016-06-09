@@ -51,6 +51,7 @@ canvas[resize] {
 }
 
 .timeline-line {
+  @include animation(200ms ease-in 1800ms both fade-in);
   background-image: url('/images/dotted-line-pattern.svg');
   background-repeat: repeat-y;
   background-position: center top;
@@ -66,12 +67,11 @@ canvas[resize] {
 .our-story {
   width: 100%;
   margin: 0 auto;
-  margin-top: 90vh;
   text-align: left;
   z-index: 1;
   position: relative;
   background: linear-gradient(180deg, rgba($deepSpace1, 0), rgba($deepSpace1, 0.8) 20vh);
-  padding-top: 20vh;
+  padding-top: 110vh;
 
   .section-title {
     background-image: url('/images/wavy-hr.svg');
@@ -125,6 +125,8 @@ canvas[resize] {
 }
 
 .oconnor-ochapo-text {
+  @include text-shadow(0px 2px 20px rgba($deepSpace2, 0.5));
+  @include animation(300ms ease-in 1500ms both fade-in);
   font-size: 13vw;
   color: #FDFFED;
   width: 100%;
@@ -136,7 +138,6 @@ canvas[resize] {
   letter-spacing: -0.01em;
   text-transform: uppercase;
   margin: -5vw 0 0 50%; 
-  @include text-shadow(0px 2px 20px rgba($deepSpace2, 0.5));
   z-index: 99;
   top: 320px;
 
@@ -151,8 +152,7 @@ canvas[resize] {
 }
 
 .cosmonauts {
-  // @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name 
-  @include animation(2s ease-in-out infinite alternate bob-down);
+  @include animation(300ms ease-in 0ms both fade-in);
   z-index: 2;
   position: absolute;
   top: 320px;
@@ -170,8 +170,12 @@ canvas[resize] {
     left: 50%;
     margin-left: -396px;
   }
-}
 
+  img {
+    // @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name 
+    @include animation(2s ease-in-out infinite alternate bob-down);
+  }
+}
 
 @include at-least($tablet) {
 

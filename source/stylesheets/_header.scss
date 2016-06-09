@@ -1,5 +1,9 @@
+header, nav {
+  position: relative;
+}
 
 .ochapo-wedding-type {
+  @include animation(250ms ease-out 1400ms both animate-header-in);
   position: absolute;
   width: 100vw;
   height: rem($baseline * 8);
@@ -16,6 +20,8 @@
 }
 
 nav.top-nav {
+  z-index: 2;
+  @include animation(200ms ease-in 1100ms both fade-in);
 
   h6 {
     padding: 2px 0;
@@ -89,6 +95,7 @@ nav.top-nav {
         }
 
         &:before {
+          @include animation(500ms ease-out 1600ms both scale-nav-star-in);
           width: 200px;
           height: 200px;
           display: block;
@@ -114,7 +121,80 @@ nav.top-nav {
     display: block;
     margin: 0 auto;
   }
+}  
+
+.animate-page-out {
+
+  .ochapo-wedding-type {
+    @include animation(250ms ease-in 200ms both animate-header-out);
+  }
+
+  nav.top-nav ul li.active:before {
+    @include animation(500ms ease-in 0ms scale-nav-star-out);
+  }
+  .oconnor-ochapo-text, .cosmonauts {
+    @include animation(300ms ease-in 100ms both fade-out);
+  }
 }
 
+@keyframes animate-header-in {
+  from {
+    transform: translateY(-52px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+@keyframes animate-header-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-52px);
+    opacity: 0;
+  }
+}
 
+@keyframes scale-nav-star-in {
+  from {
+    transform: rotate(90deg) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-nav-star-out {
+  from {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(-90deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

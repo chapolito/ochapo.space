@@ -5,9 +5,50 @@ title: RSVP to the O'Chapo Wedding !!!
 .rsvp-content
   %h1 RSVP
   %section.row
-    .col-xs-12.col-sm-offset-1.col-sm-10.col-md-offset-2.col-md-8.col-lg-offset-3.col-lg-6
-      :markdown
-        ### RSVP YO!
-
-        Coming Soon
+    .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-3.col-md-6.col-lg-offset-4.col-lg-4
+      %h3.text-center COMING SOON
+      -# %form.rsvp-form
+      -#   %label{ for: 'id-names' }
+      -#     Guest(s) Names
+      -#   %span.help-block.small
+      -#     comma separated
+      -#   %input#id-names{ type: 'text', name: 'Names' }
         
+      -#   %label{ for: 'id-email' }
+      -#     Email
+      -#   %span.help-block.small
+      -#     One per group
+      -#   %input#id-email{ type: 'email', name: 'email', autocomplete: 'email'  }
+
+      -#   .form-group.attending-radio-buttons
+      -#     %label{ for: 'id-attending' }
+      -#       Are you attending?
+          
+      -#     %ul
+      -#       %li
+      -#         %input#id-yes-attending{ type: 'radio', name: 'Attending', value: 'Yes' }
+      -#         %label{ for: 'id-yes-attending' }
+      -#           Yes
+      -#       %li
+      -#         %input#id-no-attending{ type: 'radio', name: 'Attending', value: 'No' }
+      -#         %label{ for: 'id-no-attending' }
+      -#           No
+        
+      -#   .form-group.dietary-preference-radio-buttons
+      -#     %label{ for: 'id-dietary-preference' }
+      -#       Dietary preference
+          
+      -#     %ul
+      -#       %li
+      -#         %input#id-tacos{ type: 'radio', name: 'Dietary', value: 'Tacos' }
+      -#         %label{ for: 'id-tacos' }
+      -#           Tacos
+
+      -# .form-error-message There was an error sending your form, Please try again.
+
+      -# %button#submit-form.button.button-medium.button-main{ type: 'button' }
+      -#   RSVP
+      -#   //= inline_svg 'spinner.svg', class: 'icon icon-medium spinner'
+
+      -# .get-fanpics-success
+      -#   %h3 Thank You!

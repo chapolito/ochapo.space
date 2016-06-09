@@ -2,8 +2,8 @@ $column-count: 12 !default;
 $column-selector: '.col' !default;
 $offset-modifier: 'offset' !default;
 
-$gutter-width: 3.84615% !default;
-$outer-margin: 3.84615% !default;
+$gutter-width: 3.84615vw !default;
+$outer-margin: 3.84615vw !default;
 //$gutter-compensation: (($gutter-width / 2) * -1) !default;
 //$half-gutter-width: ($gutter-width / 2) !default;
 
@@ -44,11 +44,11 @@ $offset-properties: 'margin-left' !default;
 }
 
 @mixin percentWidth($property, $columns, $count) {
-  #{$property}: ((100% / $columns) * $count);
+  #{$property}: ((100vw / $columns) * $count);
 }
 
 @mixin percentOffset($property, $columns, $count) {
-  $single-column-width: ((100% / $columns) * 1);
+  $single-column-width: ((100vw / $columns) * 1);
   #{$property}: $single-column-width * $count;
 }
 
@@ -88,7 +88,7 @@ $offset-properties: 'margin-left' !default;
         } @else {
           #{$selector + $block-delimiter + $name + $modifier-delimiter + $i} {
             @each $prop in $properties {
-              @include percentWidth($prop, $columns, $i);
+              @include percentWidth($prop, $columns + 1, $i);
             }
           }
         }
@@ -133,8 +133,6 @@ $offset-properties: 'margin-left' !default;
   box-sizing: border-box;
   margin-right: auto;
   margin-left: auto;
-  padding-right: $outer-margin;
-  padding-left: $outer-margin;
 }
 
 @mixin row() {
@@ -142,10 +140,10 @@ $offset-properties: 'margin-left' !default;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  //margin-right: $gutter-compensation;
-  //margin-left: $gutter-compensation;
   padding-right: $outer-margin;
   padding-left: $outer-margin;
+  //margin-right: $gutter-compensation;
+  //margin-left: $gutter-compensation;
 }
 
 @mixin column() {
