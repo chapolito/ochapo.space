@@ -8,8 +8,6 @@
 
     = stylesheet_link_tag "all" 
     //= stylesheet_link_tag 'http://basehold.it/26'
-    //= javascript_include_tag "https://use.typekit.net/bwv5kfk.js"
-    //= javascript_include_tag "https://use.typekit.net/lue0fxo.js"
     = javascript_include_tag "https://use.typekit.net/cvv3ucu.js"
     :javascript 
       try{Typekit.load({ async: true });}catch(e){}
@@ -29,9 +27,8 @@
             =link_to 'Our Story', '/'
           %li.nav-rsvp{ is_page_active('/rsvp/') }
             =link_to 'RSVP', '/rsvp/'
-          //%li.nav-registry{ is_page_active('/registry/') }
-          //  =link_to 'Registry', '/registry'
-        //=image_tag "nav-select.svg"
+          %li.nav-registry{ is_page_active('/registry/') }
+            =link_to 'Registry', '/registry'
 
     = yield
 

@@ -70,7 +70,7 @@ canvas[resize] {
   text-align: left;
   z-index: 1;
   position: relative;
-  background: linear-gradient(180deg, rgba($deepSpace1, 0), rgba($deepSpace1, 0.8) 20vh);
+  background: linear-gradient(180deg, rgba($deepSpace1, 0) 90vh, rgba($deepSpace1, 0.8) 110vh);
   padding-top: 110vh;
 
   .section-title {

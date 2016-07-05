@@ -96,19 +96,19 @@ nav.top-nav {
 
         &:before {
           @include animation(500ms ease-out 1600ms both scale-nav-star-in);
-          width: 200px;
-          height: 200px;
+          width: 100px;
+          height: 100px;
           display: block;
           position: absolute;
           content: ' ';
           background-image: url('/images/nav-select.svg');
           background-repeat: no-repeat;
           background-position: center top;
-          background-size: 200px 200px;
-          top: -84px;
+          background-size: 100px 100px;
+          top: -34px;
           left: 50%;
           z-index: -1;
-          margin-left: -100px;
+          margin-left: -50px;
         }
       }
     }
@@ -196,5 +196,16 @@ nav.top-nav {
   }
   to {
     opacity: 0;
+  }
+}
+
+@include at-least($tablet) {
+
+  nav.top-nav ul li.active:before {
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    top: -84px;
+    margin-left: -100px;
   }
 }

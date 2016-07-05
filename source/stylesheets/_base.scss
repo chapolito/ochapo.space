@@ -50,6 +50,7 @@ h1, h2, h3 {
 h1 {
   font-size: rem($h1);
   display: inline-block;
+  margin-bottom: rem($baseline * 3);
 }
 
 h2 {
