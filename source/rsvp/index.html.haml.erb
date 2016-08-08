@@ -5,50 +5,60 @@ title: RSVP to the O'Chapo Wedding !!!
 .rsvp-content
   %h1 RSVP
   %section.row
-    .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-3.col-md-6.col-lg-offset-4.col-lg-4
-      %h3.text-center COMING SOON
-      -# %form.rsvp-form
-      -#   %label{ for: 'id-names' }
-      -#     Guest(s) Names
-      -#   %span.help-block.small
-      -#     comma separated
-      -#   %input#id-names{ type: 'text', name: 'Names' }
+    .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-4.col-md-4
+      %form#rsvp-form
+        %label{ for: 'id-names' }
+          Guest(s) Names
+        %span.help-block.small
+          Only those attending
+        %input#id-names{ type: 'text', name: 'Names', default: 'names' }
+      
+        %label{ for: 'id-email' }
+          Email
+        %span.help-block.small
+          One per a household
+        %input#id-email{ type: 'email', name: 'Email', autocomplete: 'email'  }
+
+        .form-group.dietary-preference-radio-buttons
+          %label{ for: 'id-dietary-preference' }
+            Dietary preference
         
-      -#   %label{ for: 'id-email' }
-      -#     Email
-      -#   %span.help-block.small
-      -#     One per group
-      -#   %input#id-email{ type: 'email', name: 'email', autocomplete: 'email'  }
+          %ul
+            %li
+              %input#id-tacos{ type: 'radio', name: 'Dietary', value: 'Tacos', checked: 'checked' }
+              %label{ for: 'id-tacos' }
+                %h6 Tacos
 
-      -#   .form-group.attending-radio-buttons
-      -#     %label{ for: 'id-attending' }
-      -#       Are you attending?
-          
-      -#     %ul
-      -#       %li
-      -#         %input#id-yes-attending{ type: 'radio', name: 'Attending', value: 'Yes' }
-      -#         %label{ for: 'id-yes-attending' }
-      -#           Yes
-      -#       %li
-      -#         %input#id-no-attending{ type: 'radio', name: 'Attending', value: 'No' }
-      -#         %label{ for: 'id-no-attending' }
-      -#           No
-        
-      -#   .form-group.dietary-preference-radio-buttons
-      -#     %label{ for: 'id-dietary-preference' }
-      -#       Dietary preference
-          
-      -#     %ul
-      -#       %li
-      -#         %input#id-tacos{ type: 'radio', name: 'Dietary', value: 'Tacos' }
-      -#         %label{ for: 'id-tacos' }
-      -#           Tacos
+        .form-error-message There was an error sending your form, Please try again.
 
-      -# .form-error-message There was an error sending your form, Please try again.
+        %input#submit-form.button.button-medium.button-main{ type: 'submit', value: 'RSVP' }
 
-      -# %button#submit-form.button.button-medium.button-main{ type: 'button' }
-      -#   RSVP
-      -#   //= inline_svg 'spinner.svg', class: 'icon icon-medium spinner'
+        .rsvp-spinner
+          = image_tag '/images/spinner.svg'
 
-      -# .get-fanpics-success
-      -#   %h3 Thank You!
+        .rsvp-success
+          %h3 Thank You!
+
+
+
+
+:javascript
+
+  $("#rsvp-form").submit(function(e) {
+
+    $('.rsvp-spinner').show();
+
+    $.ajax({
+      type: "POST",
+      url: "https://script.google.com/macros/s/AKfycbywpqwwyXGizfppj0EEY3p6ZkPHcntlNiFfJAe63aKUlJuFiK0/exec",
+      data: $("#rsvp-form").serialize(), // serializes the form's elements.
+      success: function(data)
+      {
+        $('.rsvp-success').show();
+        $('.rsvp-spinner').hide();
+      }
+    });
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+  });
+
