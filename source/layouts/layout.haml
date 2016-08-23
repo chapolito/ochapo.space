@@ -37,6 +37,9 @@
       %section.row.bottom-rsvp
         .col-xs-12.text-center.ochapo-wedding-logo
           =image_tag '/images/ochapo-wedding-logo.svg'
+          -unless current_page.url == '/rsvp/'
+            =link_to( '/rsvp/', { :class => 'button' } ) do 
+              RSVP
       =image_tag '/images/footer.svg'
       %nav
         %h4 ochapo.space

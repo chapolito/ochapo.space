@@ -28,6 +28,35 @@ footer {
   .bottom-rsvp {
     padding-bottom: 6vh;
 
+    .button {
+      @include transition(all 200ms ease-in);
+      @include border-radius(10px);
+      border: 2px solid $pacificAzure;
+      background-color: transparent;
+      color: $cream;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      font-family: $header-font-stack;
+      line-height: rem($baseline * 2);
+      font-weight: 900;
+      margin: 0 auto;
+      font-size: rem($h4);
+      margin-top: rem($baseline);
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+        border: 2px solid $pacificAzure;
+        background-color: $pacificAzure;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $cream;
+      }
+    }
+
     img {
       display: inline-block;
     }

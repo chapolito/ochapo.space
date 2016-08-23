@@ -23,11 +23,12 @@
 
   input[type='text'], input[type='email'] {
     @include transition(all 300ms ease-in);
-    width: 100%;
+    width: calc(100% - 16px);
     margin-top: rem($baseline * 0.25); 
     line-height: rem($baseline * 1.5); 
     border: 2px solid $cream;
     background-color: $cream;
+    padding: 0 8px;
 
     &:focus {
       outline: none;
@@ -95,6 +96,7 @@
 
     &:focus {
       outline: none;
+      border-color: $cream;
     }
   }
 }
