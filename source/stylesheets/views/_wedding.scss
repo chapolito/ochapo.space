@@ -1,0 +1,13 @@
+.wedding-content {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  background: linear-gradient(180deg, rgba($deepSpace1, 0), rgba($deepSpace1, 0.8) 20vh);
+  padding-top: rem($baseline * 10);
+  padding-bottom: rem($baseline * 4);
+
+  section {
+    text-align: left;
+  }
+}

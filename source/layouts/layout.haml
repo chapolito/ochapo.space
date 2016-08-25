@@ -21,6 +21,8 @@
         %img( src='/images/ochapo-wedding-type.svg' )
       %nav.top-nav
         %ul
+          %li.nav-the-wedding{ is_page_active('/wedding/') }
+            =link_to 'The Wedding', '/wedding'
           %li.nav-info-to-be-known{ is_page_active('/info-to-be-known/') }
             =link_to 'Info to be Known', '/info-to-be-known'
           %li.nav-our-story{ is_page_active('/') }
