@@ -10,4 +10,17 @@
   section {
     text-align: left;
   }
+
+  h3 {
+    color: $sunsetYellow;
+    margin-top: rem($baseline * 2);
+  }
+
+  h2 {
+    color: $sunburnOchre;
+  }
+
+  .cosmo-pool {
+    margin-top: rem($baseline);
+  }
 }
