@@ -13,6 +13,20 @@ title: RSVP to the O'Chapo Wedding !!!
           Only those attending
         %input#id-names{ type: 'text', name: 'Names', default: 'names' }
       
+        .form-group.attending-radio-buttons
+          %label{ for: 'id-attending' }
+            Attending?
+        
+          %ul
+            %li
+              %input#id-attending-yes{ type: 'radio', name: 'Attending', value: 'Yes', checked: 'checked' }
+              %label{ for: 'id-attending-yes' }
+                %h6 Yes
+            %li
+              %input#id-attending-no{ type: 'radio', name: 'Attending', value: 'No' }
+              %label{ for: 'id-attending-no' }
+                %h6 No
+
         %label{ for: 'id-email' }
           Email
         %span.help-block.small
