@@ -12,11 +12,11 @@ title: RSVP to the O'Chapo Wedding !!!
         %span.help-block.small
           Only those attending
         %input#id-names{ type: 'text', name: 'Names', default: 'names' }
-      
+
         .form-group.attending-radio-buttons
           %label{ for: 'id-attending' }
             Attending?
-        
+
           %ul
             %li
               %input#id-attending-yes{ type: 'radio', name: 'Attending', value: 'Yes', checked: 'checked' }
@@ -36,7 +36,7 @@ title: RSVP to the O'Chapo Wedding !!!
         .form-group.dietary-preference-radio-buttons
           %label{ for: 'id-dietary-preference' }
             Dietary preference
-        
+
           %ul
             %li
               %input#id-tacos{ type: 'radio', name: 'Dietary', value: 'Tacos', checked: 'checked' }
@@ -51,7 +51,7 @@ title: RSVP to the O'Chapo Wedding !!!
           = image_tag '/images/spinner.svg'
 
         .rsvp-success
-          %h3 Thank You!
+          %h3 Thank You! :)
 
 :javascript
 
@@ -67,9 +67,17 @@ title: RSVP to the O'Chapo Wedding !!!
       {
         $('.rsvp-success').show();
         $('.rsvp-spinner').hide();
+      },
+      error: function (jqXHR, exception) {
+        if (jqXHR.status === 0) { // very not correct, but there is an unresolved issue with Safari and Google Sheets
+          $('.rsvp-success').show();
+        } else {
+          $('.form-error-message').html('There was an error sending your form, Please try again.\n' + jqXHR.responseText);
+          $('.form-error-message').show();
+        }
+        $('.rsvp-spinner').hide();
       }
     });
 
-    e.preventDefault(); // avoid to execute the actual submit of the form.
+    e.preventDefault(); // avoid the execution of the actual submit of the form.
   });
-
